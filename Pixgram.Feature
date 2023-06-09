@@ -9,7 +9,7 @@ Feature:Registrar Usuario
         "Contraseña" (1 numero y 1 caracter especial) y "Nombre de usuario"
     And el <usuario> de clic al boton "Crear cuenta"
     Then el sistema de la aplicacion creara una cuenta para el usuario con TEA
-
+    
     Examples:
         |   Nombres  |     Apellidos     | Nombre del usuario | Contraseña |
         | Yan Marco  |   Soto Benavides  |        YanSB       | Yan%200218 |
@@ -25,12 +25,12 @@ Feature:Registrar Usuario
     And el usuario con TEA de clic en el boton de "Crear cuenta"
     Then el sistema borrara los datos de la casilla en la cual está ocurriendo el problema
     And solicitara al usuario colocar un nuevo dato valido
-
+    
     Examples:
         |   Nombres  |     Apellidos     | Correo   | Contraseña |
         | Jherson  |   Pinedo Valverde  | Jpinedovalverde@gmail.com      | Yan200218 |
         | Gianfranco | Callocondo Choque | Gcallocondocloque07@gmail.com | Gian524%20 |
-    
+        
 Feature: Verificar usuario y contraseña
     Como usuario quiero ingresar  mi usuario y contraseña para 
     poder ingresar a la app
@@ -44,7 +44,7 @@ Feature: Verificar usuario y contraseña
     Examples:
         |  Nombre de usuario  | Contraseña |         Mensaje de sistemas       |
         |         YanSB       | Yan%200218 | Ha iniciado sesión correctamente  |
-
+        
     Scenario: Persona con TEA ingresa usuario y contraseña incorrecta
     Given que el <usuario> (ya registrado) abre la aplicacion
     When digite su usuario y contraseña en las casillas correspondientes
@@ -53,7 +53,7 @@ Feature: Verificar usuario y contraseña
         el nombre de usuario esta incorrecto)
     Then el siste,a borrará los datos de la casilla en la cual esta ocurriendo el problema
     And solicitará al usuario colocar un usuario y contraseña valido
-
+    
     Examples:
         |  Nombre de usuario  | Contraseña |                 Mensaje de sistemas                 |
         |        YanSB        | Yan%200218 | Contraseña o usuario incorrecto, vuelve intentarlo  |
@@ -88,7 +88,7 @@ Feature: Buscar y selecionar pictogramas
    When la <persona con TEA> quiera Ingresar a "pictogramas o favoritos"
    And de click en el boton de pictogramas
    Then la aplicación le mostrara una ventana con 6 categorias de pictogramas 
-
+   
    Examples:
        |     Inicio   |
        | Pictogramas  |
@@ -112,7 +112,7 @@ Feature: Personalizar pictograma
         Como familia d ela persona con TEA quiero poder perosnalizar los
         pictogramas para poder mejorar y adecuarme a sus necesidades de
         mi familiar con autismo
-
+        
     Scenario: Familiar de la persona con TEA visualiza los pictogramas
     Given que el <familiar> esta en la selección de pictogramas
     When el <familiar> observa los pictogramas, puede notar que los colores de las imagenes son de su preferencia 
@@ -132,13 +132,13 @@ Feature: Personalizar pictograma
     And de click en "Añadir"
     Then la aplicacion exhibira al miembro de la familia las opciones de categoria de un pictograma
     que ha seleccionado hasta ese momento
-
+    
     Examples:
         | Seleccion de un pictograma |
         | Playa                      | 
         | Escuela                    |
         | Parque                     |
-
+        
 Feature: Asistente virtual
     Como usuario, tengo el deseo de que la aplicación cuente con un asistente
     virtual personalizado con el fin de mejorar la utilización de los pictogramas
