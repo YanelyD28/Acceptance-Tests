@@ -166,3 +166,77 @@ Feature: Asistente virtual
         | Chat                       | 
         | Formularios                |
         | Redes sociales             |
+    Feature: Vista de redes sociales y contacto
+
+    Como usuario, quiero poder comunicarme con la empresa
+    y conocer sus redes sociales para poder escribir
+    cualquier duda o reclamo que tenga acerca de la aplicación.
+
+    Scenario: El usuario ingresa mediante la pagina web
+    Given que el <usuario> este en el Landing Page
+    When se dirija a la parte inferior de nuestra pagina
+    Then el <usuario> podra encontrar información para poder contactarnos 
+     atravez de diferentes plataformas
+    
+    Scenario: El usuario ingresa medinate la aplicación
+    Given que el <usuario> este en la zona principal de la aplicación
+    When el <usuario> abre el menu de opciones y seleccione la opcion "Contactos"
+    Then el sistema mostrara las diferentes plataformas con las que
+    puede contactar a pixgram
+
+    Examples:
+        | Menu de opciones |
+        | Contactos        |
+    
+Feature: Desplazamiento sencillo
+    
+    Como usuario, quiero tener la potestad de dirigirme entre
+    las diferentes secciones que ofrece la página web para poder 
+    observar solo la información que considero importante.
+
+    Scenario: El usuario ingresa a la pagina web de la aplicación
+    Given que el <usuario> este en el landing Page
+    And desea desplazarse a un sitio de la pagina en especifico
+    When el <usuario> seleccione cualquiera de los botones que se encuentran
+    en el "header" d ela pagina
+    Then la pagina lo desplazara hasta el punto seleccionando
+
+    Examples:
+        | Sitio especifico |
+        | Información      | 
+        | Tutoriales       |
+    
+Feature: Ver tutoriales
+    
+    Como usuario con TEA, quiero poder ver instrucciones 
+    o videos tutoriales de la aplicación para poder conocer 
+    las funcionalidades y saber más sobre lo que me ofrecen.
+
+    Scenario: el usuario ingresa a la pagina web d ela aplicación
+    Given que se encuentre en el landing Page
+    When el <usuario> seleccione la opción "tutoriales"
+    Then el sisitema le mostrara instrucciones y videos de los tutoriales
+    la aplicación
+
+    Examples:
+        | Opciones de la pagina web | 
+        | Testimonios               | 
+        | Tutoriales                |
+        | Información               |
+    
+Feature: Mostrar testimonios
+    
+    Como usuario con TEA, quiero poder conocer la historia de las 
+    personas con TEA que usaron la aplicación para poder animarme a 
+    usarla y compartirla con otros.
+        
+    Scenario: el usuario ingresa a la pagina web de la apicación
+    Given que se encuentre en el landing Page
+    When el <usuario> seleccione la opción "testimonios"
+    Then el sistema le enseñara los diferentes testimonios con los que podra interactuar.
+
+    Examples:
+        | Opciones de la pagina web | 
+        | Testimonios               | 
+        | Tutoriales                |
+        | Información               |
